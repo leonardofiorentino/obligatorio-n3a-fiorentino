@@ -122,33 +122,6 @@ function mostrarResultadoPronostico(resultadoGoles1, resultadoGoles2) {
      datosPronosticosContainer.innerHTML = contenidoHTML;
 
      // Mostrar el contenedor
+
      // eslint-disable-next-line no-undef
      datosPronosticosContainer.style.display = "block";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
