@@ -12,9 +12,30 @@
         <h1 class="display-4">Bienvenido y haga su pronóstico con facilidad</h1>
         <p class="lead">Inicie creándose un usuario y haga un pronóstico, cree un grupo si lo desea.</p>
     </div>
-<button type="button" class="btn btn-primary" onclick="mostrarFormulario()">Crear Usuario</button>
-<button type="button" class="btn btn-primary" onclick="mostrarFormulariop()">Crear Pronostico</button>
+    <form id="registroForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ingrese su nombre">
 
+        <label for="correo">Correo:</label>
+        <input type="text" id="correo" placeholder="Ingrese su correo">
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" placeholder="Ingrese su contraseña">
+
+        <button onclick="cargarDatos()">Cargar Datos en Usuarios</button>
+    </form>  
+        <form id="pronosticoForm">
+            <label for="golesCuadro1">Goles Peñarol:</label>
+            <input type="number" id="golesCuadro1" placeholder="Ingrese goles de cuadro 1">
+    
+            <label for="golesCuadro2">Goles Nacional:</label>
+            <input type="number" id="golesCuadro2" placeholder="Ingrese goles de cuadro 2">
+    
+            <button type="submit">Registrar Pronóstico</button>
+        </form>
+    
+        <button onclick="cargarPronostico()">Cargar Pronóstico en Clase</button>
+        <div id="infoPronosticos"></div>
 <div id="formularioRegistro" style="display: none;">
     <div class="form-group">
         <label for="nombre">Nombre:</label>

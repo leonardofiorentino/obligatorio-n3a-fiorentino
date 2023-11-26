@@ -1,8 +1,16 @@
+export class usuarios {
+    constructor() {
+        this.listaUsuarios = [];
+    }
 
- export class usuarios {
-    constructor(nombre, correo, contrasena) {
-        this.nombre = nombre;
-        this.correo = correo;
-        this.contrasena = contrasena;
+    agregarUsuario(nombre, correo, contrasena) {
+        const nuevoUsuario = {
+            nombre: nombre,
+            correo: correo,
+            contrasena: contrasena
+        };
+
+        this.listaUsuarios.push(nuevoUsuario);
+        console.log('Usuario registrado:', nuevoUsuario);
     }
 }

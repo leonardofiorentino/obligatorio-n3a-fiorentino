@@ -1,12 +1,22 @@
 import {usuarios} from './usuarios.js';
 
-test('Crear instancia de Usuario', () => {
-  const u = new usuarios('p', 'p@g.com', '0');
-  expect(u).toBeInstanceOf(usuarios);
-  expect(u.nombre).toBe('p');
-  expect(u.correo).toBe('p@g.com');
-  expect(u.contrasena).toBe('0');
+// Prueba para verificar si la clase Usuarios se instancia correctamente
+test('Crear instancia de Usuarios', () => {
+    const listaUsuarios = new usuarios();
+    expect(listaUsuarios).toBeDefined();
+    expect(listaUsuarios).toBeInstanceOf(usuarios);
 });
 
+// Prueba para verificar si se puede agregar un usuario correctamente
+test('Agregar usuario a la lista', () => {
+    const listaUsuarios = new usuarios();
+    listaUsuarios.agregarUsuario('Ejemplo', 'ejemplo@example.com', 'contrasena123');
+    expect(listaUsuarios.listaUsuarios).toHaveLength(1);
 
-
+    const usuario = listaUsuarios.listaUsuarios[0];
+    expect(usuario).toEqual({
+        nombre: 'Ejemplo',
+        correo: 'ejemplo@example.com',
+        contrasena: 'contrasena123'
+    });
+});

@@ -1,127 +1,124 @@
 
 import {usuarios} from '../domain/usuarios.js';
-//import {pronosticos} from '../domain/pronosticos.js';
-// eslint-disable-next-line no-unused-vars
+import {pronosticos} from '../domain/pronosticos.js';
 
 
+const listaUsuarios = new usuarios();
+const formulario = document.getElementById('registroForm');
+// Crear una instancia de la clase Pronosticos
+const listaPronosticos = new pronosticos();
+const pronosticoForm = document.getElementById('pronosticoForm');
 
-// Agregar goles al cuadro 1 y al cuadro 2
-var goles1 = 6;
-var goles2 = 1;
-// eslint-disable-next-line no-unused-vars
-function mostrarFormulario() {
-    var formulario = document.getElementById("formularioRegistro");
-    formulario.style.display = "block";
-}
-// eslint-disable-next-line no-unused-vars
-function mostrarFormulariop() {
-    var contenido = document.getElementById("contenido");
-    contenido.innerHTML = ""; // Limpiar el contenido HTML
+formulario.addEventListener('submit', function(event) {
+    // Prevenir el comportamiento por defecto del formulario (evitar recarga de la página)
+    event.preventDefault();
 
-    var formularioPronosticos = document.createElement("div");
-    formularioPronosticos.innerHTML = `
-        <div class="form-group">
-            <label for="golesCuadro1">Goles Cuadro 1:</label>
-            <input type="number" class="form-control" id="golesCuadro1" placeholder="Ingrese los goles del Cuadro 1">
-        </div>
-        <div class="form-group">
-            <label for="golesCuadro2">Goles Cuadro 2:</label>
-            <input type="number" class="form-control" id="golesCuadro2" placeholder="Ingrese los goles del Cuadro 2">
-        </div>
-        <button type="button" class="btn btn-primary" onclick="registrarPronostico()">Registrar Pronóstico</button>
-    `;
-    contenido.appendChild(formularioPronosticos);
-}
+    // Obtener valores de las cajas de texto
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const contrasena = document.getElementById('contrasena').value;
 
-// eslint-disable-next-line no-unused-vars
-function registrarUsuario() {
-    var nombre = document.getElementById("pedro").value;
-    var correo = document.getElementById("p@g.com").value;
-    var contrasena = document.getElementById("0").value;
+    // Verificar que se hayan ingresado valores
+    if (nombre && correo && contrasena) {
+        // Agregar el usuario a la listaUsuarios
+        listaUsuarios.agregarUsuario(nombre, correo, contrasena);
 
-    // Crear un objeto Usuario con los datos del formulario
-    var usuarioObj = new usuarios(nombre, correo, contrasena);
-    ///contenido.innerHTML = ""
-    // Mostrar los datos del usuario en algún lugar del documento
-    mostrarDatosUsuario(usuarioObj);
-
-    // Ocultar el formulario después de registrar al usuario
-    var formulario = document.getElementById("formularioRegistro");
-    formulario.style.display = "none";
-    // Limpiar el formulario de usuario
-    // eslint-disable-next-line no-undef
-    limpiarFormularioUsuario();
-    alert("El usuario fue creado con éxito.");
-}
-// eslint-disable-next-line no-unused-vars
-function registrarPronostico() {
-    const golesCuadro1 = document.getElementById("golesCuadro1").value;
-    const golesCuadro2 = document.getElementById("golesCuadro2").value;
-    const pronosticos = new pronosticos(golesCuadro1, golesCuadro2);
-
-    // Validar el pronóstico
-    if (validarPronostico(pronosticos.golesCuadro1, pronosticos.golesCuadro2)) {
-        // Calcular la diferencia
-        var resultadoGoles1 = pronosticos.golesCuadro1 - goles1;
-        var resultadoGoles2 = pronosticos.golesCuadro2 - goles2;
-        alert("El pronóstico fue exitoso. Ganaste.");
-        // Mostrar los resultados del pronóstico
-        mostrarResultadoPronostico(resultadoGoles1, resultadoGoles2);
+        // Limpiar las cajas de texto después de registrar
+        document.getElementById('nombre').value = '';
+        document.getElementById('correo').value = '';
+        document.getElementById('contrasena').value = '';
+              // Mostrar la información de los usuarios en el formulario
+              mostrarInformacionUsuarios();  
     } else {
-        alert("El pronóstico no fue exitoso. Vuelve a intentarlo.");
+        alert('Por favor, complete todos los campos.');
     }
+});
+// Función para mostrar la información de los usuarios en el formulario
+function mostrarInformacionUsuarios() {
+    const infoUsuariosContainer = document.getElementById('infoUsuarios');
+    infoUsuariosContainer.innerHTML = '';
+
+    listaUsuarios.listaUsuarios.forEach(usuario => {
+        const usuarioInfo = document.createElement('p');
+        usuarioInfo.textContent = `Nombre: ${usuario.nombre}, Correo: ${usuario.correo}, Contraseña: ${usuario.contrasena}`;
+        infoUsuariosContainer.appendChild(usuarioInfo);
+    });
 }
-function validarPronostico(golesCuadro1, golesCuadro2) {
-    // Puedes agregar aquí cualquier lógica de validación adicional si es necesario
-    return golesCuadro1 == goles1 && golesCuadro2 == goles2;
-}
+window.cargarDatos = function() {
+    // Obtener valores de las cajas de texto
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const contrasena = document.getElementById('contrasena').value;
 
-function mostrarDatosUsuario(usuarioObj) {
-    // Obtener el contenedor donde se mostrarán los datos del usuario
-    // eslint-disable-next-line no-unused-vars
-    var datosUsuarioContainer = document.getElementById("datosUsuario");
+    // Verificar que se hayan ingresado valores
+    if (nombre && correo && contrasena) {
+        // Agregar el usuario a la listaUsuarios
+        listaUsuarios.agregarUsuario(nombre, correo, contrasena);
 
-    // Construir el HTML con los datos del usuario
-    // eslint-disable-next-line no-unused-vars
-    var contenidoHTML = `
-        <p><strong>Nombre:</strong> ${usuarioObj.nombre}</p>
-        <p><strong>Correo:</strong> ${usuarioObj.correo}</p>
-        <p><strong>Contraseña:</strong> ${usuarioObj.contrasena}</p>
-    `;
-}
+        // Mostrar mensaje exitoso
+        alert('Datos cargados exitosamente en la clase Usuarios.');
 
-function mostrarResultadoPronostico(resultadoGoles1, resultadoGoles2) {
-    contenido.innerHTML = "" 
-    var contenido = document.getElementById("contenido");
-
-    // Crear el contenedor para mostrar los resultados
-    var resultadoPronosticoContainer = document.createElement("div");
-    resultadoPronosticoContainer.innerHTML = `
-        <h3>Resultado del Pronóstico</h3>
-        <p><strong>Diferencia de Goles Cuadro 1:</strong> ${resultadoGoles1}</p>
-        <p><strong>Diferencia de Goles Cuadro 2:</strong> ${resultadoGoles2}</p>
-    `;
-
-    // Mostrar el contenedor con los resultados
-    contenido.appendChild(resultadoPronosticoContainer);
-}
-
-        
-        // Limpiar el formulario después de mostrar los resultados
-        limpiarFormulario();
-
-    // eslint-disable-next-line no-unused-vars
-    function limpiarFormulario() {
-        // Limpiar el contenido de las cajas de texto
-        //contenido.innerHTML = ""
-        document.getElementById("golesCuadro1").value = "";
-        document.getElementById("golesCuadro2").value = "";
+        // Mostrar la información de los usuarios en el formulario
+        mostrarInformacionUsuarios();
+    } else {
+        alert('Por favor, complete todos los campos.');
     }
-     // Mostrar los datos en el contenedor
-     // eslint-disable-next-line no-undef
-     datosPronosticosContainer.innerHTML = contenidoHTML;
+};
 
-     // Mostrar el contenedor
 
-     // eslint-disable-next-line no-undef
-     datosPronosticosContainer.style.display = "block";
+pronosticoForm.addEventListener('submit', function(event) {
+    // Prevenir el comportamiento por defecto del formulario (evitar recarga de la página)
+    event.preventDefault();
+
+    // Obtener valores de las cajas de texto
+    const golesCuadro1 = parseInt(document.getElementById('golesCuadro1').value, 10);
+    const golesCuadro2 = parseInt(document.getElementById('golesCuadro2').value, 10);
+
+    // Verificar que se hayan ingresado valores numéricos
+    if (!isNaN(golesCuadro1) && !isNaN(golesCuadro2)) {
+        // Agregar el pronóstico a la listaPronosticos
+        listaPronosticos.agregarPronostico(golesCuadro1, golesCuadro2);
+
+        // Limpiar las cajas de texto después de registrar
+        document.getElementById('golesCuadro1').value = '';
+        document.getElementById('golesCuadro2').value = '';
+
+        // Mostrar la información de los pronósticos en el formulario
+        mostrarInformacionPronosticos();
+    } else {
+        alert('Por favor, ingrese valores numéricos para los goles.');
+    }
+});
+
+// Función para mostrar la información de los pronósticos en el formulario
+function mostrarInformacionPronosticos() {
+    const infoPronosticosContainer = document.getElementById('infoPronosticos');
+    infoPronosticosContainer.innerHTML = '';
+
+    listaPronosticos.listaPronosticos.forEach(pronostico => {
+        const pronosticoInfo = document.createElement('p');
+        pronosticoInfo.textContent = `Goles Cuadro 1: ${pronostico.golesCuadro1}, Goles Cuadro 2: ${pronostico.golesCuadro2}`;
+        infoPronosticosContainer.appendChild(pronosticoInfo);
+    });
+}
+
+// Función para cargar los datos en la clase Pronosticos y mostrar mensaje exitoso
+window.cargarPronostico = function() {
+    // Obtener valores de las cajas de texto
+    const golesCuadro1 = parseInt(document.getElementById('golesCuadro1').value, 10);
+    const golesCuadro2 = parseInt(document.getElementById('golesCuadro2').value, 10);
+
+    // Verificar que se hayan ingresado valores numéricos
+    if (!isNaN(golesCuadro1) && !isNaN(golesCuadro2)) {
+        // Agregar el pronóstico a la listaPronosticos
+        listaPronosticos.agregarPronostico(golesCuadro1, golesCuadro2);
+
+        // Mostrar mensaje exitoso
+        alert('Pronóstico cargado exitosamente en la clase Pronosticos.');
+
+        // Mostrar la información de los pronósticos en el formulario
+        mostrarInformacionPronosticos();
+    } else {
+        alert('Por favor, ingrese valores numéricos para los goles.');
+    }
+};
