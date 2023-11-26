@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701003477607" clover="3.2.0">
-  <project timestamp="1701003477607" name="All files">
+<coverage generated="1701005609133" clover="3.2.0">
+  <project timestamp="1701005609133" name="All files">
     <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="7" coveredelements="7" complexity="0" loc="5" ncloc="5" packages="1" files="2" classes="2"/>
     <file name="pronostico.js" path="/Users/leonardofiorentino/Desktop/obligatorioFIS/src/domain/pronostico.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
