@@ -1,5 +1,5 @@
 
- export class Usuario {
+ export class usuarios {
     constructor(nombre, correo, contrasena) {
         this.nombre = nombre;
         this.correo = correo;

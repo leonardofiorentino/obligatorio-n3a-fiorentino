@@ -1,6 +1,6 @@
 
-import {usuario} from '../domain/usuario.js';
-import {Pronosticos} from '../domain/pronostico.js';
+import {usuarios} from '../domain/usuarios.js';
+//import {pronosticos} from '../domain/pronosticos.js';
 // eslint-disable-next-line no-unused-vars
 
 
@@ -40,7 +40,7 @@ function registrarUsuario() {
     var contrasena = document.getElementById("0").value;
 
     // Crear un objeto Usuario con los datos del formulario
-    var usuarioObj = new usuario(nombre, correo, contrasena);
+    var usuarioObj = new usuarios(nombre, correo, contrasena);
     ///contenido.innerHTML = ""
     // Mostrar los datos del usuario en algún lugar del documento
     mostrarDatosUsuario(usuarioObj);
@@ -57,13 +57,13 @@ function registrarUsuario() {
 function registrarPronostico() {
     const golesCuadro1 = document.getElementById("golesCuadro1").value;
     const golesCuadro2 = document.getElementById("golesCuadro2").value;
-    const pronostico = new Pronosticos(golesCuadro1, golesCuadro2);
+    const pronosticos = new pronosticos(golesCuadro1, golesCuadro2);
 
     // Validar el pronóstico
-    if (validarPronostico(pronostico.golesCuadro1, pronostico.golesCuadro2)) {
+    if (validarPronostico(pronosticos.golesCuadro1, pronosticos.golesCuadro2)) {
         // Calcular la diferencia
-        var resultadoGoles1 = pronostico.golesCuadro1 - goles1;
-        var resultadoGoles2 = pronostico.golesCuadro2 - goles2;
+        var resultadoGoles1 = pronosticos.golesCuadro1 - goles1;
+        var resultadoGoles2 = pronosticos.golesCuadro2 - goles2;
         alert("El pronóstico fue exitoso. Ganaste.");
         // Mostrar los resultados del pronóstico
         mostrarResultadoPronostico(resultadoGoles1, resultadoGoles2);

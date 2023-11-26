@@ -1,5 +1,5 @@
-// eslint-disable-next-line no-unused-vars
-import {Pronosticos} from './pronostico.js';
+
+import {Pronosticos} from './pronosticos.js';
 
 
 test('Crear instancia de Pronosticos', () => {
