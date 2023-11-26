@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Botones y Formulario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="display-4">Bienvenido y haga su pronóstico con facilidad</h1>
+        <p class="lead">Inicie creándose un usuario y haga un pronóstico, cree un grupo si lo desea.</p>
+    </div>
+<button type="button" class="btn btn-primary" onclick="mostrarFormulario()">Crear Usuario</button>
+<button type="button" class="btn btn-primary" onclick="mostrarFormulariop()">Crear Pronostico</button>
+
+<div id="formularioRegistro" style="display: none;">
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+    </div>
+    <div class="form-group">
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo electrónico">
+    </div>
+    <div class="form-group">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña">
+    </div>
+    <button type="button" class="btn btn-primary" onclick="registrarUsuario()">Registrar Usuario</button>
+</div>
+
+<div id="contenido" class="container my-4">
+ 
+    <div id="formularioPronosticos" style="display: none;">
+        <div class="form-group">
+            <label for="golesCuadro1">Goles Cuadro 1:</label>
+            <input type="number" class="form-control" id="golesCuadro1" placeholder="Ingrese los goles del Cuadro 1">
+        </div>
+        <div class="form-group">
+            <label for="golesCuadro2">Goles Cuadro 2:</label>
+            <input type="number" class="form-control" id="golesCuadro2" placeholder="Ingrese los goles del Cuadro 2">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="registrarPronostico()">Registrar Pronóstico</button>
+    </div>
+
+    <div id="resultadoPronostico" style="display: none;">
+        <!-- Aquí se mostrarán los resultados del pronóstico -->
+    </div>
+</div>
+
+<div id="datosUsuario" style="display: none;">
+    <!-- Aquí se mostrarán los datos del usuario -->
+</div>
+<div id="datosPronosticos" style="display: none;">
+    <!-- Aquí se mostrarán los datos de los pronósticos -->
+</div>
+
+<script src="tu_script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
