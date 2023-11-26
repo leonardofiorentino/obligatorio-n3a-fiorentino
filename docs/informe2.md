@@ -29,7 +29,9 @@
 
 ## Interfaz de usuario
 En la parte de interfaces, solo tendremos index.html y main.js, una carpeta con logos, y el archivo de style.css.
-En main.js tendra la programacion del lado del cliene la instansacion de las clases y la carga de datos para que el programa funcione. Esto se compone tambien de la programacion de creacion de grupo, de creacion de usuario, de resultados, , el html los link y la estructura estetica para ser llamado por el programa. La programacion con funciones, crea y ejecutan funciones para actualizar puntaje
+En main.js tendra la programacion del lado del cliene la instansacion de las clases y la carga de datos para que el programa funcione. Esto se compone tambien de la programacion de creacion de grupo, de creacion de usuario, de resultados, , el html los link y la estructura estetica para ser llamado por el programa. La programacion con funciones, crea y ejecutan funciones para actualizar puntaje.
+En sistemas grandes para industrias, se ve como la parte de interfaces no tiene logica, si no que es solo la interacción con el usuario final, y del lado de la aplicación la logica y la inteligencia de todo el aparato de procesamiento, para asi poder ejecutar del lado con mas poder de procesamiento e interactuar con la base de datos. En el cado de sistemas con alto volumen y procesos de mucho cambio no trancar el usuario final.
+Para dividir esto, puede ser que en el plan del proyecto los programadores que hacen codigo para el procesamiento no toquen la interfaz y viceversa.
 
 ## Codificación
 Se divide en 'domain' 'interface'.
@@ -48,5 +50,5 @@ La implementación de pruebas unitarias con Jest que hemos hecho, ayuda a garant
 
 
 ## Reflexión
-Es muy potente trabajar con el enfoque dirigido por pruebas, que fomenta la creacion de pruebas en un ambiente de desarrollo y dirige el producto final hacia un codigo de altisima calidad. Es admirabla entender esta forma bastante nueva de trabajar creando continuamente por el desarrollador su propio control, automatizando así la verificacion continua.
+Es muy potente trabajar con el enfoque dirigido por pruebas unitarias, al principio entendi que era algo absurdo y parte de documentacion, una vez que las purebas, constantemente esta uno probando la calidad del codito que produce, que fomenta la creacion de pruebas en un ambiente de desarrollo y dirige el producto final hacia un codigo de altisima calidad. Es admirabla entender esta forma bastante nueva de trabajar creando continuamente por el desarrollador su propio control, automatizando así la verificacion continua.
 En general, la combinación de Jest, ESLint y configuraciones en archivos JSON, JavaScript y CSS proporciona un entorno robusto para el desarrollo de software de alta calidad. La reflexión sobre su uso puede llevar a mejoras continuas en el código y en los procesos de desarrollo.
