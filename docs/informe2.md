@@ -30,8 +30,23 @@
 ## Interfaz de usuario
 En la parte de interfaces, solo tendremos index.html y main.js, una carpeta con logos, y el archivo de style.css.
 En main.js tendra la programacion del lado del cliene la instansacion de las clases y la carga de datos para que el programa funcione. Esto se compone tambien de la programacion de creacion de grupo, de creacion de usuario, de resultados, , el html los link y la estructura estetica para ser llamado por el programa. La programacion con funciones, crea y ejecutan funciones para actualizar puntaje.
-En sistemas grandes para industrias, se ve como la parte de interfaces no tiene logica, si no que es solo la interacción con el usuario final, y del lado de la aplicación la logica y la inteligencia de todo el aparato de procesamiento, para asi poder ejecutar del lado con mas poder de procesamiento e interactuar con la base de datos. En el cado de sistemas con alto volumen y procesos de mucho cambio no trancar el usuario final.
+En sistemas grandes para industrias, se ve como la parte de interfaces no tiene logica o logica minima, se trabaja con un diseñador web, si no que es solo la interacción con el usuario final. 
+El que trabaja con front-end tiene la tarea de cortar un diseño gráfico, dividir el diseño en partes más pequeñas y codificar (HTML y CSS) en sitios web que los usuarios finalmente usan. Con JavaScript se presenta todas las interacciones avanzadas entre la página y el usuario.
+Y del lado de la aplicación la logica y la inteligencia de todo el aparato de procesamiento, para asi poder ejecutar del lado con mas poder de procesamiento e interactuar con la base de datos. En el cado de sistemas con alto volumen y procesos de mucho cambio no trancar el usuario final.
 Para dividir esto, puede ser que en el plan del proyecto los programadores que hacen codigo para el procesamiento no toquen la interfaz y viceversa.
+Buenas practicas para desarrollar en 
+## Cumplimiento de las reglas de usabilidad.
+1/ No se cumple con la visisbilidad del estado del sistema, se ve que la web no tiene un recorrido estetico y el comportamiento no tiene base en que el usuario pueda entenderlo.
+Puede entenderse con las indicaciones en las cajas de texto que es lo que debe ingresar el usuario, pero eso es mínimo para ser un desarrollo profesional.
+2/ No hay coincidencia entre el sistema y el mundo real, ya que no hay un funcionamiento acorde, en la creación del usuario y el ingreso de los goles para hacer el pronostico, debe avisarle al usuario y no lo hace, no cumple la medida.
+3/ El usuario tiene el control y la libertad de llenar las casillas del usuario o del pronostico, tambien hay datos ingresados para que esto se cumpla. Si cumple con el control y libertad al usuario.
+4/ Se es consistente, cuando se controlan las cajas de texto para que no pueda el usuario entrar cualquier cosa, tambien que en el pronostico sea solo números. si se cumple con la consistencia y los estandares.
+5/ Previene errores ya que controla todo lo que el usuario ingresa para el fin del pronostico.
+6/ Le recuerda al usuario que debe entrar en cada caja de texto y los botones para que cumplan cada accion. Si cumple el reconocer en lugar y recordar.
+7/ Es una pagina tanto para expertos en web como para recien iniciados. Si cumple es flexible y tiene eficiencia de uso.
+8/ Estetica ninguna pero diseño minimalista si porque es un proyecto acotado por tiempo y RRHH.
+9/ Ayuda al usuario a reconocer, con mensajes que ingreso datos mal, diagnositicar entendiendo el mensaje el usuario sabe que debe repetir y con que criterio e ingresando de nuevo.
+10/ No tiene ayuda por lo tanto no cumple, aunque hay que decirlo que es tan sencillo que no seria necesaria, y todo se puede hacer tan solo equivocandose y el sistema lo ayuda a hacerlo acertadamente.
 
 ## Codificación
 Se divide en 'domain' 'interface'.
@@ -40,13 +55,22 @@ se programa es java script los archivos estan ordenados en nombreDeClase y nombr
 en el archivo nombreDeClase contiene la creacion de la clase.
 nombreDeClase.Test contiene la instancia de las clases y carga con datos los atributos de las claes para que el programa funcione.
 
+## Estandares de codigicacion
 
+![.eslintrc.jason](image.png)
+se ustiliza los estandares de html, css, javascript y google style, se adjunta evidencia de la ejecucion de control sin errores.
+![npm run lint](image-1.png)
+
+En la parte de html, se hace la ejecución de botones y creacion de formularios y en la parte de javascript se ejecutan las funciones para recibir los datos del html y hacer la funcionalidad deseada. Se crean 2 clases usuarios y pronosticos, y de ahi tambien los test unitarios. 
 
 
 ## Test unitario
-En el domain tenemos cada clase con su respectiva clase que prueba el funcionamiento, es la forma de probar el correcto funcionamiento de los módulo antes de integrarlo con el resto del sistema. En cada caso de prueba unitario se hace por un método independiente.
+En el domain tenemos cada clase (usuarios y pronostico)con su respectiva clase que prueba usuarios.test y pronosticos.test el funcionamiento, es la forma de probar el correcto funcionamiento de los módulo antes de integrarlo con el resto del sistema. En cada caso de prueba unitario se hace por un método independiente.
 Jest es un marco de pruebas muy poderoso para JavaScript. Su capacidad para realizar pruebas unitarias, pruebas de integración y pruebas de extremo a extremo contribuye significativamente a la calidad del código.
 La implementación de pruebas unitarias con Jest que hemos hecho, ayuda a garantizar que las funciones y componentes individuales de la penca funcionen como se espera.
+Es probado por jest y no tiene errores, se adjunta imagen.
+![npm test](image-2.png)
+
 
 
 ## Reflexión
