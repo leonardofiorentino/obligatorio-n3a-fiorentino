@@ -51,9 +51,10 @@ Puede entenderse con las indicaciones en las cajas de texto que es lo que debe i
 ## Codificación
 Se divide en 'domain' 'interface'.
 Domain: 
-se programa es java script los archivos estan ordenados en nombreDeClase y nombreDeClasetest , y se organizan de la siguiente forma:
+se programa es java script los archivos estan ordenados en nombreDeClase y nombreDeClase.test , y se organizan de la siguiente forma:
 en el archivo nombreDeClase contiene la creacion de la clase.
-nombreDeClase.Test contiene la instancia de las clases y carga con datos los atributos de las claes para que el programa funcione.
+nombreDeClase.Test contiene los test unitarios en javascript, en el html se programa el forntend y en la parte del dominio las funcionalidades con javascript. 
+
 
 ## Estandares de codigicacion
 
@@ -74,5 +75,5 @@ Es probado por jest y no tiene errores, se adjunta imagen.
 
 
 ## Reflexión
-Es muy potente trabajar con el enfoque dirigido por pruebas unitarias, al principio entendi que era algo absurdo y parte de documentacion, una vez que las purebas, constantemente esta uno probando la calidad del codito que produce, que fomenta la creacion de pruebas en un ambiente de desarrollo y dirige el producto final hacia un codigo de altisima calidad. Es admirabla entender esta forma bastante nueva de trabajar creando continuamente por el desarrollador su propio control, automatizando así la verificacion continua.
+Es muy potente trabajar con el enfoque dirigido por pruebas unitarias, al principio entendi que era algo absurdo y parte de documentacion, una vez que las purebas, constantemente esta uno probando la calidad del codigo que produce, que fomenta la creacion de pruebas en un ambiente de desarrollo y dirige el producto final hacia un codigo de altisima calidad. Es admirabla entender esta forma bastante nueva de trabajar creando continuamente por el desarrollador su propio control, automatizando así la verificacion continua.
 En general, la combinación de Jest, ESLint y configuraciones en archivos JSON, JavaScript y CSS proporciona un entorno robusto para el desarrollo de software de alta calidad. La reflexión sobre su uso puede llevar a mejoras continuas en el código y en los procesos de desarrollo.
