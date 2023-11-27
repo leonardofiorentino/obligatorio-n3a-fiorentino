@@ -107,18 +107,16 @@ window.cargarPronostico = function() {
     // Obtener valores de las cajas de texto
     const golesCuadro1 = parseInt(document.getElementById('golesCuadro1').value, 10);
     const golesCuadro2 = parseInt(document.getElementById('golesCuadro2').value, 10);
-
-    // Verificar que se hayan ingresado valores numéricos
+    if (golesCuadro1 === 2 && golesCuadro2 === 1) {
+        alert("¡Felicidades! Has acertado el pronóstico. y se ha cargado exitosamente")
+    }
     if (!isNaN(golesCuadro1) && !isNaN(golesCuadro2)) {
         // Agregar el pronóstico a la listaPronosticos
         listaPronosticos.agregarPronostico(golesCuadro1, golesCuadro2);
-
-        // Mostrar mensaje exitoso
-        alert('Pronóstico cargado exitosamente en la clase Pronosticos.');
-
-        // Mostrar la información de los pronósticos en el formulario
+        alert("¡Lo siento! Has perdido la oportunidad.");
         mostrarInformacionPronosticos();
     } else {
         alert('Por favor, ingrese valores numéricos para los goles.');
     }
 };
+
