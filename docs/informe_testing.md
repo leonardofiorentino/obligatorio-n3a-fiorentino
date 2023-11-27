@@ -3,6 +3,10 @@ Proyecto asignado: [https://github.com/leonardofiorentino/obligatorio-n3a-fioren
 
 ## Test de sistema
 Se hace un testing funcional, nos se ve un flujo y se ven inconsistencias en el proyecto.
+El sistema crea un usuario, y crea un pronostico que valida con datos ya ingresados del partido.
+Esta prueba se hace correctamente, se crea el usuario, y se genera una validación, que hace que el pronostico emboque o no, y despliega un mensaje en los dos casos correctamente.
+De lo analizado en analisis del inicio del proyecto hay faltantes, se nota que falto horas de RRHH, hay fechas del proyecto que no estuvieron acorde al trabajo que se solicitó.
+Hay una clara separacion de la logica de la interfaz, el problema esta resuelto en el dominio, cuando la interfaz solo tiene botones y cajas de texto.
 
 ## Reporte de issues
 Se generan issues para dejar constancia de bugs del sistema. 
