@@ -1,5 +1,5 @@
 # Informe de testing 
-Proyecto asignado: [link]
+Proyecto asignado: [https://github.com/leonardofiorentino/obligatorio-n3a-fiorentino.git]
 
 ## Test de sistema
 
