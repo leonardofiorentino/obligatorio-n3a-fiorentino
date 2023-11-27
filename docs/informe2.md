@@ -75,5 +75,8 @@ Es probado por jest y no tiene errores, se adjunta imagen.
 
 
 ## Reflexión
-Es muy potente trabajar con el enfoque dirigido por pruebas unitarias, al principio entendi que era algo absurdo y parte de documentacion, una vez que las purebas, constantemente esta uno probando la calidad del codigo que produce, que fomenta la creacion de pruebas en un ambiente de desarrollo y dirige el producto final hacia un codigo de altisima calidad. Es admirabla entender esta forma bastante nueva de trabajar creando continuamente por el desarrollador su propio control, automatizando así la verificacion continua.
+Es muy potente trabajar con el enfoque dirigido por pruebas unitarias, al principio entendi que era algo absurdo y parte de documentacion, una vez que las purebas constantemente esta uno probando la calidad del codigo que produce, que fomenta la creacion de pruebas en un ambiente de desarrollo y dirige el producto final hacia un codigo de altisima calidad. Es admirable entender esta forma bastante nueva de trabajar creando continuamente por el desarrollador su propio control, automatizando así la verificacion continua.
 En general, la combinación de Jest, ESLint y configuraciones en archivos JSON, JavaScript y CSS proporciona un entorno robusto para el desarrollo de software de alta calidad. La reflexión sobre su uso puede llevar a mejoras continuas en el código y en los procesos de desarrollo.
+
+También está claro la división entre la interfaz y el dominio, lo que hace uno y lo que hace el otro, es notable que en la interfaz no solo prima lo estetico, si no que tambien es programación para la ejecución liviana. En cuanto al dominio es donde tiene la robustez, donde hay pruebas de funcionamiento y la inteligencia del sistema. 
+
